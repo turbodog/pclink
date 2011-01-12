@@ -1,0 +1,42 @@
+This is a replacement for the truly terrible server that Philips supplied for their otherwise wonderful Streamium MC-i250 and MC-i200 music systems.
+
+
+To use this server:
+   1. Install the most recent Python v2.6 (www.python.org). Do not install v2.7 or v3.x, they will not work
+   2. Unzip pclink files
+   3. Edit pclink.py and change the settings listed below to match your setup
+      a. Changing SCAN_ROOT and URL_PREFIX will be mandatory
+      b. Everything else could be left as is
+      c. Add as many streams as you like using the example setting, eg { 'name': 'url', 'name': 'url', 'name': 'url'}
+   4. Run pclink.py, eg c:\python26\python.exe pclink.py
+
+
+
+##################################################
+#
+# Important options
+#
+##################################################
+
+PCLINK_SERVER_NAME = "Python PCLink"
+SAVEFILE = "pclink.dat"
+SCAN_ROOT = "D:\\Tunes\\Tagged"
+URL_PREFIX = "http://192.168.100.6:80/music/Tagged"
+CALC_LENGTH = True
+RESCAN_ALL = False
+PREFER_ALBUM_TAG_TO_FOLDER_NAME = True
+TESTING_WITH_STREAMYTEST = False
+
+streams = { 'WWOZ':'http://wwoz-sc.streamguys.com/wwoz-hi.mp3', 'DI Ambient':'http://205.188.215.228:8006' }
+
+
+
+
+Cavets: 
+
+- This is tuned to the way I prefer to use the Streamium device. Adding or changing functionality wouldn't be that hard for you to do.
+
+- Requires an existing web server to serve MP3 files. I couldn't find a drop-in web server that supports fast forwarding through MP3s on the client device, but my existing local Apache install worked perfectly. I recommend setting up a basic Apache install and have it serve your MP3s. 
+
+- SCAN_ROOT, URL_PREFIX and your web server need to be configured enabled pclink to first scan your MP3s and then pass URLs to Apache when you are using the device
+
