@@ -3,12 +3,13 @@ This is a replacement for the truly terrible server that Philips supplied for th
 
 To use this server:
    1. Install the most recent Python v2.6 (www.python.org). Do not install v2.7 or v3.x, they will not work
-   2. Unzip pclink files
-   3. Edit pclink.py and change the settings listed below to match your setup
+   2. Unzip pclink files to a new folder
+   3. Open a command prompt and change to the new pclink folder
+   4. Edit pclink.py and change the settings listed below to match your setup
       a. Changing SCAN_ROOT and URL_PREFIX will be mandatory
       b. Everything else could be left as is
       c. Add as many streams as you like using the example setting, eg { 'name': 'url', 'name': 'url', 'name': 'url'}
-   4. Run pclink.py, eg c:\python26\python.exe pclink.py
+   5. Run pclink.py, eg c:\python26\python.exe pclink.py
 
 
 
